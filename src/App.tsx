@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, useState } from 'react'
+import AddContactForm from './components/AddContactForm'
 
-function App() {
+import Contact from './models/Contact'
+import DisplayContacts from './components/DisplayContacts'
+
+const App: FC = () => {
+  const [contactList, setContactList] = useState<Contact[]>([])
+
+  const addContact = (newContact: Contact) => {
+    setContactList([...contactList, newContact])
+  }
+
+  const updateContact = (newContact: Contact) => {
+    setContactList(
+      contactList.map((contact) =>
+        contact.id === newContact.id ? newContact : contact
+      )
+    )
+  }
+
+  const deleteContact = (id: number) => {
+    const newContactsList = contactList.filter((contact) => contact.id !== id)
+    setContactList(newContactsList)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="wrap">
+        <h1 className="heading">Contact List</h1>
+        <AddContactForm addContact={addContact} />
+        <DisplayContacts
+          contactsList={contactList}
+          updateContact={updateContact}
+          deleteContact={deleteContact}
+        />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
