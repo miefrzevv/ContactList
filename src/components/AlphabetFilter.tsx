@@ -18,7 +18,6 @@ const AlphabetFilter: FC<AlphabetFilterProps> = ({
           {letter}
         </button>
       ))}
-      <button onClick={() => onSelectedLetter(null)}>X</button>
     </div>
   )
 }
