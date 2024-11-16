@@ -1,11 +1,17 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, ChangeEvent, useEffect } from 'react'
 import AddContactForm from './components/AddContactForm'
+
+import { useLocalStorage } from 'usehooks-ts'
 
 import Contact from './models/Contact'
 import DisplayContacts from './components/DisplayContacts'
 
 const App: FC = () => {
-  const [contactList, setContactList] = useState<Contact[]>([])
+  const [contactList, setContactList] = useLocalStorage<Contact[]>(
+    'contacts',
+    []
+  )
+  const [searchTerm, setSearchTerm] = useState('')
 
   const addContact = (newContact: Contact) => {
     setContactList([...contactList, newContact])
