@@ -1,10 +1,11 @@
 import React, { FC, useState, ChangeEvent, useEffect } from 'react'
-import AddContactForm from './components/AddContactForm'
+import AddContactForm from '../components/AddContactForm'
+import styles from './App.module.css'
 
 import { useLocalStorage } from 'usehooks-ts'
 
-import Contact from './models/Contact'
-import DisplayContacts from './components/DisplayContacts'
+import Contact from '../models/Contact'
+import DisplayContacts from '../components/DisplayContacts'
 
 const App: FC = () => {
   const [contactList, setContactList] = useLocalStorage<Contact[]>(
@@ -31,9 +32,10 @@ const App: FC = () => {
   }
 
   return (
-    <div className="App">
-      <div className="wrap">
-        <h1 className="heading">Contact List</h1>
+    <div className={styles.App}>
+      <div className={styles.wrapper}>
+        <h1 className={styles.heading}>Contact List</h1>
+        
         <AddContactForm addContact={addContact} />
         <DisplayContacts
           contactsList={contactList}

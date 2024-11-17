@@ -1,0 +1,57 @@
+.wrapper {
+    padding: 0;
+    margin: 30px auto;
+    display: flex;
+    column-gap: 30px;
+    justify-content: center;
+}
+
+.wrapper__name {
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.wrapper__name:focus {
+    transform: scale(1.1);
+}
+
+.wrapper__surname {
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.wrapper__surname:focus {
+    transform: scale(1.1);
+}
+
+.wrapper__number {
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.wrapper__number:focus {
+    transform: scale(1.1);
+}
+
+.wrapper__select {
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.wrapper__select:focus {
+    transform: scale(1.1);
+}
+
+.wrapper__btn {
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+}
+
+.wrapper__btn:hover {
+    transform: scale(1.1);
+}

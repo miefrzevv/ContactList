@@ -1,5 +1,5 @@
 import React, { useState, FC, ChangeEvent, FormEvent, useEffect } from 'react'
-import Contact from '../models/Contact'
+import Contact from '../../models/Contact'
 
 interface EditContactFormProps {
   data: Contact

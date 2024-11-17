@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import Contact from '../models/Contact'
+import Contact from '../../models/Contact'
 
 const useFilteredContacts = (
   contactsList: Contact[],

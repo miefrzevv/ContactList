@@ -1,8 +1,9 @@
 import React, { FC, useState, useEffect } from 'react'
-import Contact from '../models/Contact'
-import SingleContact from './SingleContact'
-import useFilteredContacts from '../hooks/useFilteredContacts'
-import AlphabetFilter from './AlphabetFilter'
+import Contact from '../../models/Contact'
+import SingleContact from '../SingleContact'
+import useFilteredContacts from '../../hooks/useFilteredContacts'
+import AlphabetFilter from '../AlphabetFilter'
+import styles from './DisplayContacts.module.css'
 
 interface DisplayContactsProps {
   contactsList: Contact[]
@@ -28,6 +29,7 @@ const DisplayContacts: FC<DisplayContactsProps> = ({
     <div>
       {/* поле поиска */}
       <input
+        className={styles.search}
         type="text"
         placeholder="Поиск по имени/фамилии/телефону"
         value={searchTerm}
@@ -43,12 +45,14 @@ const DisplayContacts: FC<DisplayContactsProps> = ({
       {/* мап контактов */}
       {filteredContacts.map((contact) => {
         return (
-          <SingleContact
-            contact={contact}
-            key={contact.id}
-            updateContact={updateContact}
-            deleteContact={deleteContact}
-          />
+          <div className={styles.wrapper}>
+            <SingleContact
+              contact={contact}
+              key={contact.id}
+              updateContact={updateContact}
+              deleteContact={deleteContact}
+            />
+          </div>
         )
       })}
     </div>

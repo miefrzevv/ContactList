@@ -1,0 +1,48 @@
+.wrapper {
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+}
+
+.wrapper__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 223px;
+    border-radius: 4px;
+}
+
+.wrapper__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.wrapper__name {
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+.wrapper__surname {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper__number {
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.wrapper__controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper__btn {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+    cursor: pointer;
+}

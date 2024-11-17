@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import styles from './AlphabetFilter.module.css'
 
 interface AlphabetFilterProps {
   selectedLetter: string | null
@@ -12,9 +13,13 @@ const AlphabetFilter: FC<AlphabetFilterProps> = ({
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       {alphabet.map((letter) => (
-        <button key={letter} onClick={() => onSelectedLetter(letter)}>
+        <button
+          key={letter}
+          onClick={() => onSelectedLetter(letter)}
+          className={styles.btn}
+        >
           {letter}
         </button>
       ))}
