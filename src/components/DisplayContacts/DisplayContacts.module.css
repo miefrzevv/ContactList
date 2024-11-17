@@ -1,7 +1,17 @@
-.wrapper {
+.search {
     margin: 0 auto;
-    padding: 0;
     display: flex;
+    padding: 10px;
+    min-width: 250px;
+    text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.wrapper__list {
+    display: flex;
+    justify-content: start;
+    column-gap: 50px;
+    row-gap: 100px;
+    flex-wrap: wrap;
 }

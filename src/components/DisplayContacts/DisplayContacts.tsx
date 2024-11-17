@@ -26,7 +26,7 @@ const DisplayContacts: FC<DisplayContactsProps> = ({
   )
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       {/* поле поиска */}
       <input
         className={styles.search}
@@ -41,20 +41,19 @@ const DisplayContacts: FC<DisplayContactsProps> = ({
         selectedLetter={selectedLetter}
         onSelectedLetter={(letter) => setSelectedLetter(letter)}
       />
-
-      {/* мап контактов */}
-      {filteredContacts.map((contact) => {
-        return (
-          <div className={styles.wrapper}>
+      <div className={styles.wrapper__list}>
+        {/* мап контактов */}
+        {filteredContacts.map((contact) => {
+          return (
             <SingleContact
               contact={contact}
               key={contact.id}
               updateContact={updateContact}
               deleteContact={deleteContact}
             />
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </div>
   )
 }

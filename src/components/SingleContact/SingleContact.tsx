@@ -40,8 +40,14 @@ const SingleContact: FC<SingleContactProps> = ({
       </div>
 
       <div className={styles.wrapper__controls}>
-        <AiFillEdit onClick={() => handleToggleEdit()} className={styles.wrapper__btn}/>
-        <AiFillDelete onClick={() => handleDelete()} className={styles.wrapper__btn}/>
+        <AiFillEdit
+          onClick={() => handleToggleEdit()}
+          className={styles.wrapper__btn}
+        />
+        <AiFillDelete
+          onClick={() => handleDelete()}
+          className={styles.wrapper__btn}
+        />
       </div>
 
       {edit ? (

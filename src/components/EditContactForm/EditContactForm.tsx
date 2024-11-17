@@ -31,37 +31,39 @@ const EditContactForm: FC<EditContactFormProps> = ({
   }
 
   return (
-    <form className="edit-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Имя"
-        onChange={handleChange}
-        value={editContact.name}
-      />
-      <input
-        type="text"
-        name="surname"
-        placeholder="Фамилия"
-        onChange={handleChange}
-        value={editContact.surname}
-      />
-      <input
-        type="text"
-        name="number"
-        placeholder="Телефон"
-        onChange={handleChange}
-        value={editContact.number}
-      />
-      <input
-        type="text"
-        name="img"
-        placeholder="Выбрать аватарку"
-        onChange={handleChange}
-        value={editContact.img}
-      />
-      <button type="submit">Подтвердить</button>
-    </form>
+    <dialog open>
+      <form className="edit-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Имя"
+          onChange={handleChange}
+          value={editContact.name}
+        />
+        <input
+          type="text"
+          name="surname"
+          placeholder="Фамилия"
+          onChange={handleChange}
+          value={editContact.surname}
+        />
+        <input
+          type="text"
+          name="number"
+          placeholder="Телефон"
+          onChange={handleChange}
+          value={editContact.number}
+        />
+        <input
+          type="text"
+          name="img"
+          placeholder="Выбрать аватарку"
+          onChange={handleChange}
+          value={editContact.img}
+        />
+        <button type="submit">Подтвердить</button>
+      </form>
+    </dialog>
   )
 }
 export default EditContactForm
